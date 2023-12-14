@@ -1,0 +1,80 @@
+$bg-color: rgba(30, 30, 30, 1);
+$praimry-color: rgba(0, 100, 179, 1);
+$main-color: rgba(26, 106, 30, 1);
+$main-color2: rgba(255, 175, 8, 1);
+$highlite-color: rgba(41, 41, 41, 1);
+$white: white;
+$layout: rgba(45, 45, 45, 1);
+
+@mixin filld {
+  height: 50px;
+  width: 344px;
+  border: 1px solid $praimry-color;
+  border-radius: 12px;
+  background: transparent;
+  padding: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: $white;
+  margin-block: 15px;
+}
+@mixin button {
+  border: none;
+  padding-inline: 50px;
+  padding-block: 12px;
+  background: $praimry-color;
+  color: $white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin: 20px;
+}
+@mixin button2 {
+  border: none;
+  padding-inline: 6px;
+  padding-block: 3px;
+  background: $praimry-color;
+  color: $white;
+  font-size: 12px;
+  border-radius: 4px;
+  margin: 20px;
+}
+@mixin display-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@mixin itmes-layout {
+  width: 350px;
+  height: 75px;
+  background-color: $layout;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 10px 0px 10px;
+  .lay-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+  }
+  .icon-placeholder {
+    height: 36px;
+    width: 36px;
+    border-radius: 4px;
+    background: $white;
+  }
+  h2 {
+    font-size: 20;
+    font-weight: 400;
+    color: $white;
+  }
+  p {
+    font-size: 10px;
+    color: $white;
+  }
+  button {
+    @include button2;
+  }
+}

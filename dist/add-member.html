@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/add-member.7ecfae8a.css">
+    <link href="https://fonts.cdnfonts.com/css/code-3x" rel="stylesheet">
+  <script src="/add-member.7ecfae8a.js"></script></head>
+  <body>
+    <div class="container">
+      <div class="main-card">
+        <div class="id-data">
+          <h3 id="fullName">full name</h3>
+          <p id="emailOrNumber">exampl@gmail.com</p>
+        </div>
+        <h5 id="gender">gender</h5>
+        <div class="code">
+          <div class="img-container">
+            <img id="qrCodeImg" src="" alt="">
+          </div>
+
+          <h4 id="code">code:E2000</h4>
+        </div>
+      </div>
+      <div class="data">
+      <form action="">
+        <input id="fullNameInput" maxlength="15" placeholder="Full Name" type="text" oninput="fullNameFunction()">
+        <input id="emailOrNumberInput" maxlength="30" placeholder="Email or number" type="email" oninput="emailOrNumberFunction()">
+
+             <input maxlength="4" oninput="Code()" id="codeInput" type="number" placeholder="code">
+
+        <select oninput="genderFunction()" name="gender" id="genderInput">
+          <option value="male">male</option>
+          <option value="female">female</option>
+        </select>
+      </form>
+      <button onclick="gQr()">add family member</button>
+
+        <a href="/add-member.html">family member</a>
+      </div>
+      
+    </div>
+    <script>function fullNameFunction() {
+  var fullNameInput = document.getElementById("fullNameInput");
+  var fullName = document.getElementById("fullName");
+  fullName.innerText = fullNameInput.value;
+}
+function emailOrNumberFunction() {
+  var emailOrNumberInput = document.getElementById("emailOrNumberInput");
+  var emailOrNumber = document.getElementById("emailOrNumber");
+  emailOrNumber.innerText = emailOrNumberInput.value;
+}
+function genderFunction() {
+  var genderInput = document.getElementById("genderInput");
+  var gender = document.getElementById("gender");
+  gender.innerText = genderInput.value;
+}
+var qrCodeImg = document.getElementById("qrCodeImg");
+var codeInput = document.getElementById("codeInput");
+var code = document.getElementById("code");
+function Code() {
+  code.innerText = "code:E" + codeInput.value;
+  qrCodeImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=" + "E" + codeInput.value;
+}</script>
+  </body>
+</html>

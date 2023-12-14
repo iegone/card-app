@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="gQr()">add family member</button>
+    <p id="code"></p>
+     <img id="qrCodeImg" src="" alt="" />
+     <input maxlength="4" oninput="Code()" id="codeInput" type="text"/>
+
+        <script>
+            let qrCodeImg = document.getElementById("qrCodeImg")
+            let codeInput = document.getElementById("codeInput")
+            let code = document.getElementById("code")
+            function gQr () {
+                qrCodeImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+ "E" + codeInput.value ;
+            }
+            function Code () {
+                code.innerText = "E" +codeInput.value
+            }
+        </script>
+</body>
+</html>
